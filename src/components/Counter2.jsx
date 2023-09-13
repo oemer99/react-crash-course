@@ -28,4 +28,4 @@ function Counter2(){
 )
 }
 
-export default Counter2
+// export default Counter2

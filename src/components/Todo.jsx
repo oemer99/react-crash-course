@@ -1,9 +1,7 @@
 import "./Todo.css"
 
-function Todo({title}){
-    function deleteTodo(id){
-        console.log("deleted", title.toUpperCase());
-    }
+function Todo({ title, onTodoDelete }){
+
 
     return (
     // in React wird eine Klasse mit "className" zugewiesen
@@ -11,7 +9,7 @@ function Todo({title}){
          <p>{title}</p>
         {/* <button onClick ={deleteTodo}>Delete</button></div> */}
                    {/* //hier deleteTodo OHNE klammern() */}
-      <button onClick ={() => deleteTodo(1)}>Delete</button></div>
+      <button onClick ={onTodoDelete}>Delete</button></div>
                 // wenn klammern dann per porenticiys also () =>  
     )
 }

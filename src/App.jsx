@@ -1,41 +1,22 @@
-import './App.css';
-import Todo from "./components/Todo.jsx"
-import Title from "./components/Title.jsx"
-import Modal from "./components/Modal.jsx"
-import React, { useState } from "react";
-import Counter2 from "./components/Counter2.jsx"
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
+import Nav from "./components/Nav.jsx";
+import Users from "./pages/Users.jsx";
 
 function App() {
-
-
-  return <Counter2 />
-
-
-  const [showModal, setShowModal] = useState(false)
-
   return (
-    <div >
-      <Title />
-
-      <div>
-        <input type="text" onChange={(event) => {
-          console.log(event.target.value);
-        }}/>
-        <button onClick={() => setShowModal(true)}>Add todo</button>
-      </div>
-      <div className='todo__wrapper'>
-      <Todo 
-      title="Finish Frontend Simplified"/>
-      {/* if its not a string, then geschweifte klammern {} */}
-      {/* <Todo title={2}/> */}
-
-      <Todo 
-      title="Finish Interview"/>
-      <Todo 
-      title="Land a 100k Job"/> 
-      </div>
-      {showModal && <Modal title="Are you sure???"/>}
-    </div>
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/users/:id" element={<Users />}></Route>
+        </Routes>
+      </Router>
   );
 }
 export default App;

@@ -1,4 +1,4 @@
-/** Reacht
+/** React
  * 
  * What is React?
  * 
